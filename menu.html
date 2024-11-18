@@ -12,6 +12,7 @@
     </header>
     <div class="container">
         <h2>Welcome to MathMatch!</h2>
+        <p>MathMatch is a fun and educational game designed to test your mathematical skills and quick thinking! Match the mathematical derivative equations on the left with their corresponding answers on the right within a limited time. Challenge yourself to get as many correct matches as possible and aim for a high score!</p>
         <p>Select an option below to get started:</p>
         <a href="game.html" class="button">Play Game</a>
         <button id="logout-button" class="button">Logout</button>
@@ -22,7 +23,6 @@
 
         onAuthStateChanged(auth, (user) => {
             if (!user) {
-
                 window.location.href = "index.html";
             }
         });
