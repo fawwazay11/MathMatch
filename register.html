@@ -23,9 +23,8 @@
         <a href="index.html" class="button">Back to Login</a>
     </div>
     <script type="module">
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
-        const auth = getAuth();
+        import { auth } from "./firebase-config.js";
+        import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
         const signupForm = document.getElementById('signup-form');
         const errorMessage = document.getElementById('error-message');

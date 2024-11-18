@@ -1,23 +1,9 @@
-<script type="module">
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
-    const auth = getAuth();
-
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            // Redirect to login if not authenticated
-            window.location.href = "index.html";
-        }
-    });
-</script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathMatch - Main Menu</title>
+    <title>MathMatch - Menu</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,8 +11,34 @@
         <h1>MathMatch</h1>
     </header>
     <div class="container">
-        <h2>Main Menu</h2>
+        <h2>Welcome to MathMatch!</h2>
+        <p>Select an option below to get started:</p>
         <a href="game.html" class="button">Play Game</a>
+        <button id="logout-button" class="button">Logout</button>
     </div>
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+        // Ensure user is authenticated
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Redirect to login if not authenticated
+                window.location.href = "index.html";
+            }
+        });
+
+        // Handle logout
+        const logoutButton = document.getElementById('logout-button');
+        logoutButton.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                alert("You have been logged out.");
+                window.location.href = "index.html"; // Redirect to the login page
+            } catch (error) {
+                console.error("Error signing out:", error);
+            }
+        });
+    </script>
 </body>
 </html>
