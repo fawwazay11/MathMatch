@@ -6,6 +6,18 @@ body {
     background-color: #f4f4f9;
 }
 
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -16,6 +28,10 @@ body {
 }
 
 h1 {
+    margin-bottom: 20px;
+}
+
+h2 {
     margin-bottom: 20px;
 }
 
@@ -39,6 +55,11 @@ input {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    margin: 10px;
+}
+
+.button:hover, button:hover {
+    background-color: #0056b3;
 }
 
 #game-board {
