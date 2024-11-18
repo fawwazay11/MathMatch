@@ -37,9 +37,9 @@
             try {
                 await createUserWithEmailAndPassword(auth, email, password);
                 alert("Sign-up successful! You can now log in.");
-                window.location.href = "index.html"; // Redirect to the login page
+                window.location.href = "index.html";
             } catch (error) {
-                errorMessage.textContent = error.message; // Show error message on failure
+                errorMessage.textContent = error.message;
             }
         });
     </script>

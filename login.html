@@ -38,9 +38,9 @@
 
             try {
                 await signInWithEmailAndPassword(auth, email, password);
-                window.location.href = "menu.html"; // Redirect to the main menu
+                window.location.href = "menu.html";
             } catch (error) {
-                errorMessage.textContent = error.message; // Show error message on failure
+                errorMessage.textContent = error.message; 
             }
         });
     </script>

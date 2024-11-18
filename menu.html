@@ -20,21 +20,19 @@
         import { auth } from "./firebase-config.js";
         import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-        // Ensure user is authenticated
         onAuthStateChanged(auth, (user) => {
             if (!user) {
-                // Redirect to login if not authenticated
+
                 window.location.href = "index.html";
             }
         });
 
-        // Handle logout
         const logoutButton = document.getElementById('logout-button');
         logoutButton.addEventListener('click', async () => {
             try {
                 await signOut(auth);
                 alert("You have been logged out.");
-                window.location.href = "index.html"; // Redirect to the login page
+                window.location.href = "index.html";
             } catch (error) {
                 console.error("Error signing out:", error);
             }

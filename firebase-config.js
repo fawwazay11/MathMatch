@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -9,11 +10,13 @@ const firebaseConfig = {
     storageBucket: "mathmatch-853eb.appspot.com",
     messagingSenderId: "234722458779",
     appId: "1:234722458779:web:db2d76c53c052880f19a3e",
-    measurementId: "G-QV6QYR8H38"
+    measurementId: "G-QV6QYR8H38",
+    databaseURL: "https://mathmatch-853eb-default-rtdb.firebaseio.com",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Export Firebase Authentication instance
+// Initialize Auth and Database
 export const auth = getAuth(app);
+export const database = getDatabase(app);
