@@ -1,0 +1,32 @@
+<script type="module">
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            // Redirect to login if not authenticated
+            window.location.href = "index.html";
+        }
+    });
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathMatch - Main Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>MathMatch</h1>
+    </header>
+    <div class="container">
+        <h2>Main Menu</h2>
+        <a href="game.html" class="button">Play Game</a>
+    </div>
+</body>
+</html>
